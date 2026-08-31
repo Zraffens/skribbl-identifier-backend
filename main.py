@@ -1,3 +1,5 @@
+import asyncio
+
 from fastapi import FastAPI, UploadFile, File, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 from inference import predict_drawing_bytes
@@ -29,5 +31,5 @@ async def websocket_drawing(websocket: WebSocket):
     await websocket.accept()
     while True:
         data = await websocket.receive_bytes()
-        result = predict_drawing_bytes(data)
+        result = await asyncio.to_thread(predict_drawing_bytes, data)
         await websocket.send_json(result)

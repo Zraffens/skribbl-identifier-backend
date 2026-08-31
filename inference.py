@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image, ImageOps, ImageEnhance
 from model import SkribblCNN
 
-CLASSES = ['apple', 'car', 'dog', 'tree', 'clock']
+CLASSES = ['apple', 'car', 'dog', 'tree']
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(CURRENT_DIR, "models", "skribbl_cnn_best.pth")
