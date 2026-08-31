@@ -1,0 +1,13 @@
+# Python & Environments
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Datasets
+data/
+*.npy
+
+
+# System
+.DS_Store
